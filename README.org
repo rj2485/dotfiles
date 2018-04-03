@@ -2,10 +2,10 @@
   1) Clone the repository
   2) Emacs Setup
      1) Move ~init.el~ and ~myinit.org~ to ~.emacs.d/~
-     2) Download and move ~ox-reveal.el~ to ~.emacs.d/lisp/~
+     2) [[https://github.com/yjwen/org-reveal][Download]] and move ~ox-reveal.el~ to ~.emacs.d/lisp/~
      3) Start (or restart) emacs
      4) Voila
   3) Tmux Setup
-     1) Install powerline
+     1) Install [[https://github.com/powerline/powerline][powerline]]
      2) Restart tmux
      3) Voila
