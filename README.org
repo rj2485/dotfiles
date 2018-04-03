@@ -1,3 +1,3 @@
 * Installation and Setup
   1) Clone the repository
-  2) Move ~init.el~ and ~myinit.org~ to ~~.emacs.d/~
+  2) Move ~init.el~ and ~myinit.org~ to ~~~.emacs.d/~
