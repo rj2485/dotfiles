@@ -1,0 +1,150 @@
+#+STARTIP: overview
+
+* Base Setup
+** Interface Setup
+   Sets up the interface
+   - Gets rid of the startup screen
+   - Allows y and n to sub in for yes and no
+   - Allows f5 to reload a file
+
+   #+BEGIN_SRC emacs-lisp
+     (setq inhibit-startup-message t)
+
+     (fset 'yes-or-no-p 'y-or-n-p)
+     (global-set-key (kbd "<f5>") 'revert-buffer)
+
+     (defalias 'list-buffers 'ibuffer-other-window)
+   #+END_SRC
+
+** try
+   Sets up the try package
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package try
+       :ensure t)
+   #+END_SRC
+
+** which-key
+   Sets up the which-key package
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package which-key
+       :ensure t
+       :config (which-key-mode))
+   #+END_SRC
+
+** zenburn-theme
+   I like the zenburn theme.
+   
+   #+begin_src emacs-lisp
+     (use-package zenburn-theme
+       :ensure t
+       :config (load-theme 'zenburn t))
+   #+end_src
+
+** ace-window
+   ace-window setup.
+
+   #+begin_src emacs-lisp
+     (use-package ace-window
+       :ensure t
+       :init
+       (global-set-key [remap other-window] 'ace-window)
+       )
+
+   #+end_src
+
+** counsel
+   counsel setup.
+      
+   #+BEGIN_SRC emacs-lisp
+     (use-package counsel
+       :ensure t
+       :bind
+       (("M-y" . counsel-yank-pop)
+	:map ivy-minibuffer-map
+	("M-y" . ivy-next-line)))
+   #+END_SRC
+
+** ivy
+   ivy setup
+   
+   #+BEGIN_SRC emacs-lisp
+     (use-package ivy
+      :ensure t
+      :diminish (ivy-mode)
+      :bind (("C-x b" . ivy-switch-buffer))
+      :config
+      (ivy-mode 1)
+      (setq ivy-use-virtual-buffers t)
+      (setq ivy-count-format "%d/%d ")
+      (setq ivy-display-style 'fancy))
+   #+END_SRC
+
+** swiper
+   swiper setup.
+   
+   #+begin_src emacs-lisp
+       (use-package swiper
+	 :ensure t
+	 :bind (("C-s" . swiper)
+		("C-r" . swiper)
+		("C-c C-r" . ivy-resume)
+		("M-x" . counsel-M-x)
+		("C-x C-f" . counsel-find-file))
+	 :config
+	 (progn
+	   (ivy-mode 1)
+	   (setq ivy-use-virtual-buffers t)
+	   (setq ivy-display-style 'fancy)
+	   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+	   ))
+   #+end_src
+** avy
+   avy setup.
+   
+   #+begin_src emacs-lisp
+     (use-package avy
+       :ensure t
+       :bind ("M-s" . avy-goto-char))
+   #+end_src
+** auto-complete
+   auto-complete setup.
+   
+   #+begin_src emacs-lisp
+     (use-package auto-complete
+       :ensure t
+       :init
+       (progn
+         (ac-config-default)
+         (global-auto-complete-mode t)
+         ))
+   #+end_src
+
+   
+* org-mode setup
+** org-bullets
+   org-bullets setup.
+
+   #+begin_src emacs-lisp
+     (use-package org-bullets
+	 :ensure t
+	 :config
+	 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+   #+end_src
+** Reveal.js
+   reveal.js setup
+   
+   #+begin_src emacs-lisp
+     (require 'ox-reveal)
+
+     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0")
+     (setq org-reveal-mathjax t)
+
+     (use-package htmlize
+       :ensure t)
+   #+end_src
+
+   #+RESULTS:
+
