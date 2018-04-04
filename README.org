@@ -1,11 +1,15 @@
 * Installation and Setup
-  1) Clone the repository
-  2) Emacs Setup
-     1) Move ~init.el~ and ~myinit.org~ to ~.emacs.d/~
-     2) [[https://github.com/yjwen/org-reveal][Download]] and move ~ox-reveal.el~ to ~.emacs.d/lisp/~
-     3) Start (or restart) emacs
-     4) Voila
-  3) Tmux Setup
-     1) Install [[https://github.com/powerline/powerline][powerline]]
-     2) Restart tmux
-     3) Voila
+   1) Clone the repository
+** Emacs Setup
+   1) Move ~init.el~ and ~myinit.org~ to ~.emacs.d/~
+   2) [[https://github.com/yjwen/org-reveal][Download]] and move ~ox-reveal.el~ to ~.emacs.d/lisp/~
+   3) Start (or restart) emacs
+   4) Voila
+** Tmux Setup
+   1) Install [[https://github.com/powerline/powerline][powerline]]
+   2) Restart tmux
+   3) Voila
+** Zsh Setup
+   1) Move ~zshrc~ to ~.zshrc~
+   2) Restart zsh
+   3) Voila
