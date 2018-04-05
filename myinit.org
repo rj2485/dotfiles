@@ -119,18 +119,18 @@
        )
 
    #+end_src
-p
+
 ** counsel
-   counsel setup.
+    counsel setup.
       
-   #+BEGIN_SRC emacs-lisp
-     (use-package counsel
-       :ensure t
-       :bind
-       (("M-y" . counsel-yank-pop)
-	:map ivy-minibuffer-map
-	("M-y" . ivy-next-line)))
-   #+END_SRC
+    #+BEGIN_SRC emacs-lisp
+      (use-package counsel
+	:ensure t
+	:bind
+	(("M-y" . counsel-yank-pop)
+	 :map ivy-minibuffer-map
+	 ("M-y" . ivy-next-line)))
+    #+END_SRC
 
 ** ivy
    ivy setup
