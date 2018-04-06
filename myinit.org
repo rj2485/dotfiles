@@ -241,7 +241,7 @@
    #+RESULTS:
    : t
 ** magit
-   magit (git) setup.
+   magit (git) setup.  For some reason the keybinding wasn't working by default (unsure if this is desired behavior or not), but I added it manually.
 
    #+BEGIN_SRC emacs-lisp
      (use-package magit
