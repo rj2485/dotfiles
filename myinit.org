@@ -240,6 +240,19 @@
 
    #+RESULTS:
    : t
+** magit
+   magit (git) setup.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package magit
+       :ensure t
+       :config
+       (global-set-key (kbd "C-c g") 'magit-status)
+       )
+   #+END_SRC
+
+   #+RESULTS:
+   : t
 
 * Various Language Environment Setups
 ** Python Development
