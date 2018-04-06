@@ -3,8 +3,8 @@ export TERM="xterm-256color"
 export POWERLINE_CONFIG_COMMAND="/Users/thor/Library/Python/2.7/bin/powerline-config"
 export ZSH=/Users/thor/.oh-my-zsh
 
-export EDITOR='emacs -a "" -t'
-alias emacs="emacsclient -a \"\" -t"
+export EDITOR='emacsclient -a "" -t'
+alias emacs='emacsclient -a "" -t'
 
 alias mux="tmuxinator"
 
