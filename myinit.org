@@ -496,8 +496,10 @@
   - C-x n narrow-widen-dwim
   - C-c C-e w surrounds marked area in html tag
   - C-c C-f folds html
-** TODO elpy
-** DONE Look more into dumb-jump re c++ and c
+
+** Things to Look Into
+*** TODO elpy
+*** DONE Look more into dumb-jump re c++ and c
 
 
 
