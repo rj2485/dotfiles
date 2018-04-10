@@ -355,20 +355,26 @@
      (global-set-key (kbd "C-c c") 'org-capture)
 
      (setq org-capture-templates
-	   '(("a" "Calendar Items" entry (file+headline  "~/GoogleDrive/src/orgfiles/cal.org" "Calendar Unfiled")
-	      "* %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n")
-	     ("n" "Note" entry (file+headline "~/GoogleDrive/src/orgfiles/notes.org" "Notes")
-	      "* %?\n%T")
-	     ("l" "Link" entry (file+headline "~/GoogleDrive/src/orgfiles/links.org" "Links")
-	      "* %? %^L %^g \n%T" :prepend t)
-	     ("t" "To Do Item" entry (file+headline "~/GoogleDrive/src/orgfiles/i.org" "To Do Items")
-	      "* TODO %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n" :prepend t)
-	     ("j" "Journal" entry (file+datetree "~/GoogleDrive/src/orgfiles/journal.org")
-	      "* %?\nEntered on %U\n  %i\n  %a")))
+           '(("a" "Calendar Item" entry (file+headline  "~/Dropbox/src/orgfiles/cal.org" "Calendar Unfiled")
+              "* %?\n:PROPERTIES:\n\n:END:\n%^T \n %i\n")
+             ("n" "Note" entry (file+headline "~/Dropbox/src/orgfiles/notes.org" "Notes")
+              "* %?\n%T")
+             ("l" "Link" entry (file+headline "~/Dropbox/src/orgfiles/links.org" "Links")
+              "* %? %^L %^g \n%T" :prepend t)
+             ("t" "To Do Item" entry (file+headline "~/Dropbox/src/orgfiles/i.org" "To Do Items")
+              "* TODO %?\n:PROPERTIES:\n\n:END:\nSCHEDULED: %^T \n %i\n" :prepend t)
+             ("d" "Deadline Item" entry (file+headline "~/Dropbox/src/orgfiles/i.org" "Deadlines")
+              "* TODO %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n" :prepend t)
+             ("j" "Journal" entry (file+datetree "~/Dropbox/src/orgfiles/journal.org")
+              "* %?\nEntered on %U\n  %i\n  %a")))
    #+END_SRC
 
    #+RESULTS:
-   | a | Calendar Items | entry | (file+headline ~/GoogleDrive/src/orgfiles/cal.org Calendar Unfiled) | * %? |
+   | a | Calendar Items | entry | (file+headline ~/Dropbox/src/orgfiles/cal.org Calendar Unfiled) | * %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n      |          |   |
+   | n | Note           | entry | (file+headline ~/Dropbox/src/orgfiles/notes.org Notes)          | * %?\n%T                                                |          |   |
+   | l | Link           | entry | (file+headline ~/Dropbox/src/orgfiles/links.org Links)          | * %? %^L %^g \n%T                                       | :prepend | t |
+   | t | To Do Item     | entry | (file+headline ~/Dropbox/src/orgfiles/i.org To Do Items)        | * TODO %?\n:PROPERTIES:\n\n:END:\nDEADLINE: %^T \n %i\n | :prepend | t |
+   | j | Journal        | entry | (file+datetree ~/Dropbox/src/orgfiles/journal.org)              | * %?\nEntered on %U\n  %i\n  %a                         |          |   |
 
 ** org-gcal
    org-gcal config.
@@ -383,7 +389,7 @@
        :config
        (setq org-gcal-client-id "CLIENT ID"
 	     org-gcal-client-secret "SECRET"
-	     org-gcal-file-alist '(("johnrod.john@gmail.com" . "~/GoogleDrive/src/orgfiles/cal.org"))))
+	     org-gcal-file-alist '(("johnrod.john@gmail.com" . "~/Dropbox/src/orgfiles/cal.org"))))
 
    #+END_SRC
 
@@ -394,8 +400,8 @@
    org-agenda
 
    #+BEGIN_SRC emacs-lisp
-     (setq org-agenda-files (list "~/GoogleDrive/src/orgfiles/cal.org"
-				  "~/GoogleDrive/src/orgfiles/i.org"))
+     (setq org-agenda-files (list "~/Dropbox/src/orgfiles/cal.org"
+				  "~/Dropbox/src/orgfiles/i.org"))
 
      (define-key global-map "\C-ca" 'org-agenda)
 
